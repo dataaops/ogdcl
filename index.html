@@ -1,0 +1,416 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Data Visualization Portfolio</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+
+    <style>
+        :root {
+            --primary-color: #2c3e50;
+            --secondary-color: #34495e;
+            --background-color: #f4f6f7;
+            --text-color: #2c3e50;
+            --accent-color: #1175d8;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            line-height: 1.6;
+            background-color: var(--background-color);
+            color: var(--text-color);
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+
+            
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 40px 20px;
+        }
+
+        /* Profile Section */
+        .profile {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        .profile-image {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 3px solid var(--accent-color);
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+
+        .profile-name {
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-top: 20px;
+        }
+
+        .profile-title {
+            font-size: 1.2rem;
+            color: var(--secondary-color);
+        }
+
+        /* Dashboard Section */
+        .dashboard-container {
+            background-color: white;
+            border-radius: 12px;
+           
+            overflow: hidden;
+            margin-bottom: 40px;
+        }
+
+        .dashboard-iframe {
+            width: 100%;
+            height: 450px;
+            border: none;
+        }
+
+        /* Sections */
+        .section {
+            background-color: white;
+            border-radius: 12px;
+            margin-bottom: 20px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            overflow: hidden;
+        }
+
+        .section-header {
+            padding: 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: #f9f9f9;
+            cursor: pointer;
+        }
+
+        .section-title {
+            font-size: 1.2rem;
+            font-weight: 600;
+            color: var(--primary-color);
+        }
+
+        .section-toggle {
+            color: var(--accent-color);
+            font-size: 1.5rem;
+            transition: transform 0.3s ease;
+        }
+
+        .section-content {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease, padding 0.3s ease;
+            padding: 0 20px;
+        }
+
+        .section-content.active {
+            max-height: 500px;
+            padding: 20px;
+        }
+
+        .section-content p, ul {
+            color: var(--secondary-color);
+        }
+
+        /* Download Button */
+        .download-button {
+            display: block;
+            margin: 40px auto 0;
+            padding: 12px 24px;
+            background-color: var(--accent-color);
+            color: #fff;
+            text-align: center;
+            font-size: 1rem;
+            font-weight: 600;
+            border-radius: 8px;
+            text-decoration: none;
+            transition: background-color 0.3s ease;
+        }
+
+        .download-button:hover {
+            background-color: #0f59ad;
+        }
+
+        /* Responsive Adjustments */
+        @media (max-width: 768px) {
+            .profile-name {
+                font-size: 2rem;
+            }
+
+            .dashboard-iframe {
+                height: 450px;
+                width: 400;
+            }
+        }
+
+
+        /* Skills Section */
+.skills-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1.5rem;
+  justify-items: center;
+}
+
+.skill-card {
+  background-color: #ffffff;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(154, 154, 154, 0.1);
+  padding: 1.5rem;
+  text-align: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  width: 100%;
+  max-width: 250px;
+}
+
+.skill-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 15px rgba(137, 137, 137, 0.2);
+}
+
+.skill-card .icon {
+  font-size: 2.5rem;
+  color: var(--accent-color);
+  margin-bottom: 1rem;
+}
+
+.skill-card h3 {
+  font-size: 1.25rem;
+  margin-bottom: 0.5rem;
+}
+
+.skill-card p {
+  font-size: 0.9rem;
+  color: #666;
+}
+
+
+    .social-links {
+      display: flex;
+      gap: 20px;
+    }
+    .social-links a {
+      text-decoration: none;
+      color: #fff;
+      width: 50px;
+      height: 50px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      border-radius: 50%;
+      transition: transform 0.3s, box-shadow 0.3s;
+    }
+    .social-links a:hover {
+      transform: scale(1.1);
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    }
+    .instagram { background-color: #E1306C; }
+    .linkedin { background-color: #0077B5; }
+    .github { background-color: #333; }
+    .gmail { background-color: #D14836; }
+    .social-links i {
+      font-size: 24px;
+    }
+
+    .social-section
+    {
+        display: flex;
+        justify-content: center;
+ 
+    }
+
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Profile Section -->
+        <div class="profile">
+            <img src="/img/The Developer logo (1) - Copy (1).jpg" alt="Profile Picture" class="profile-image">
+            <h1 class="profile-name">The Developer</h1>
+            <p class="profile-title">Blinkit Power BI Dashboard</p>
+            
+    
+        </div>
+
+       
+
+        <!-- Dashboard Section -->
+        <!-- Paste Publish Report URL here -->
+        <div class="dashboard-container">
+            <iframe 
+                class="dashboard-iframe" 
+                src="https://app.powerbi.com/reportEmbed?reportId=50197259-fc1d-4180-b68e-a84d057b3d41&autoAuth=true&ctid=6b926fa7-99b7-428b-89d1-15ff0f311f73"  
+                title="Food Delivery Dashboard"
+                allowfullscreen>
+            </iframe>
+        </div>
+
+      
+
+        <div class="section">
+            <div class="section-header">
+                <h2 class="section-title">Sales Overview</h2>
+                <div class="section-toggle">+</div>
+            </div>
+            <div class="section-content">
+                <p>The Sales Overview report offers a comprehensive breakdown of sales performance across various regions, time periods, and product categories. It identifies trends, peak sales periods, and revenue contributions from key areas. This report helps businesses understand sales drivers and plan strategies to boost overall revenue.</p>
+            </div>
+        </div>
+
+        <div class="section">
+            <div class="section-header">
+                <h2 class="section-title">Overview Report</h2>
+                <div class="section-toggle">+</div>
+            </div>
+            <div class="section-content">
+                <p>The Overview report provides a high-level snapshot of the business performance across key metrics. It highlights total revenue, orders, operational efficiency, and customer engagement. This report serves as a quick summary for stakeholders to assess overall business health and growth trends.</p>
+            </div>
+        </div>
+
+        <div class="section">
+            <div class="section-header">
+                <h2 class="section-title">Customer Report</h2>
+                <div class="section-toggle">+</div>
+            </div>
+            <div class="section-content">
+                <ul>
+                    <p> The Customer report focuses on customer behavior and order patterns. It includes insights such as top-ordering customers, repeat purchase rates, and demographic details. This report helps businesses identify loyal customers, understand preferences, and enhance satisfaction by addressing customer needs effectively.</p>
+                </ul>
+            </div>
+        </div>
+
+        <div class="section">
+            <div class="section-header">
+                <h2 class="section-title">Inventory Report</h2>
+                <div class="section-toggle">+</div>
+            </div>
+            <div class="section-content">
+                <p>Track operational KPIs such as delivery time, efficiency rates, and partner performance to improve overall workflow.</p>
+            </div>
+        </div>
+
+        <div class="section">
+            <div class="section-header">
+                <h2 class="section-title"> Marketing Report</h2>
+                <div class="section-toggle">+</div>
+            </div>
+            <div class="section-content">
+                <p>The Marketing report analyzes the impact of campaigns and promotions on sales and customer acquisition. It tracks key metrics like conversion rates, ad performance, and revenue generated from marketing efforts. By identifying successful campaigns, businesses can optimize marketing strategies for better ROI.</p>
+            </div>
+        </div>
+
+           <!-- Download Project Button -->
+           <a href="/img/Blinkit Power BI Dashboard-2.pdf" download="Blinkit Power BI Dashboard.pdf" class="download-button">Download Project PDF</a>
+ 
+
+          <!-- Expandable Sections -->
+
+          <!-- Technical Skills Section -->
+<section id="skills" style="padding: 2rem 0;">
+    <div class="container">
+      <h2 class="section-title" style="text-align: center; margin-bottom: 2rem;">Skill Used</h2>
+      <div class="skills-grid">
+        <!-- Skill Card 1 -->
+        <div class="skill-card">
+          <div class="icon">
+            <i class="fas fa-database"></i>
+          </div>
+          <h3>SQL</h3>
+          <p>Data querying and database management</p>
+        </div>
+        <!-- Skill Card 2 -->
+        <div class="skill-card">
+          <div class="icon">
+            <i class="fas fa-chart-bar"></i>
+          </div>
+          <h3>Power BI</h3>
+          <p>Data visualization and dashboards</p>
+        </div>
+        <!-- Skill Card 3 -->
+        <div class="skill-card">
+          <div class="icon">
+            <i class="fab fa-figma"></i>
+          </div>
+          <h3>Figma</h3>
+          <p>Design Theme and elements</p>
+        </div>
+        <!-- Skill Card 4 -->
+        <!-- <div class="skill-card">
+          <div class="icon">
+            <i class="fab fa-html5"></i>
+          </div>
+          <h3>HTML & CSS</h3>
+          <p>Web design and front-end development</p>
+        </div> -->
+      </div>
+    </div>
+  </section>
+
+  <div class="social-section">
+
+  
+
+    <div class="social-links">
+
+                
+        <a href="https://thedeveloperyt.com/" class="instagram" target="_blank" title="Instagram">
+          <i class="fab fa-instagram"></i>
+        </a>
+        <a href="https://www.linkedin.com/in/yourusername" class="linkedin" target="_blank" title="LinkedIn">
+          <i class="fab fa-linkedin"></i>
+        </a>
+        <a href="https://github.com/yourusername" class="github" target="_blank" title="GitHub">
+          <i class="fab fa-github"></i>
+        </a>
+        <a href="mailto:your-email@gmail.com" class="gmail" title="Gmail">
+          <i class="fas fa-envelope"></i>
+        </a>
+      </div>
+    
+
+  </div>
+ 
+
+        </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const sections = document.querySelectorAll('.section');
+
+            sections.forEach(section => {
+                const header = section.querySelector('.section-header');
+                const content = section.querySelector('.section-content');
+                const toggle = section.querySelector('.section-toggle');
+
+                header.addEventListener('click', () => {
+                    // Close other sections
+                    sections.forEach(otherSection => {
+                        if (otherSection !== section) {
+                            otherSection.querySelector('.section-content').classList.remove('active');
+                            otherSection.querySelector('.section-toggle').textContent = '+';
+                        }
+                    });
+
+                    // Toggle current section
+                    content.classList.toggle('active');
+                    toggle.textContent = content.classList.contains('active') ? '−' : '+';
+                });
+            });
+        });
+    </script>
+</body>
+</html>
