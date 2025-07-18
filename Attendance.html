@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Employee Rota Entry</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #f5f7fa;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+
+    form {
+      background: white;
+      padding: 30px 40px;
+      border-radius: 10px;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+      width: 100%;
+      max-width: 400px;
+    }
+
+    h2 {
+      text-align: center;
+      margin-bottom: 20px;
+      color: #333;
+    }
+
+    input, select, button {
+      width: 100%;
+      padding: 10px 12px;
+      margin: 10px 0;
+      border-radius: 5px;
+      border: 1px solid #ccc;
+      font-size: 16px;
+    }
+
+    input:focus, select:focus {
+      border-color: #007BFF;
+      outline: none;
+    }
+
+    button {
+      background-color: #007BFF;
+      color: white;
+      font-weight: bold;
+      cursor: pointer;
+      transition: background 0.3s ease;
+    }
+
+    button:hover {
+      background-color: #0056b3;
+    }
+  </style>
+</head>
+<body>
+  <form 
+    method="POST"
+    action="https://script.google.com/macros/s/AKfycbzw4B0ZOi4wQTqiCcuHnb-8Eb97zYNdGEskQ2n0BqoslLp__lsEe4zbT2WcLUA-RcZM/exec"
+  >
+    <h2>Employee Attendance Form</h2>
+
+    <input 
+      name="EmployeeCode" 
+      type="number" 
+      placeholder="Employee Code (max 5 digits)" 
+      maxlength="5" 
+      oninput="this.value = this.value.slice(0, 5)" 
+      required
+    >
+
+    <input 
+      name="Name" 
+      type="text" 
+      placeholder="Employee Name" 
+      required
+    >
+
+     <select name="Designation" required>
+      <option value="">-- Select Designation --</option>
+      <option value="Medical Officer">Medical Officer</option>
+      <option value="Registered Nurse">Registered Nurse</option>
+     </select>
+
+    <select name="Site" required>
+      <option value="">-- Select Site --</option>
+      <option value="SP-5">SP-5</option>
+      <option value="Rig N-2">Rig N-2</option>
+      <option value="SP-2">SP-2</option>
+      <option value="SP-3">SP-3</option>
+      <option value="Rig N-4">Rig N-4</option>
+      <option value="Rig N-6">Rig N-6</option>
+      <option value="Rig N-5">Rig N-5</option>
+      <option value="Rig N-55">Rig N-55</option>
+      <option value="SK-750">SK-750</option>
+      <option value="Rig N-3">Rig N-3</option>
+      <option value="SP-1">SP-1</option>
+      <option value="SP-4">SP-4</option>
+    </select>
+
+    <input 
+      name="RotaInDate" 
+      type="date" 
+      required
+    >
+
+    <button type="submit">Submit</button>
+  </form>
+</body>
+</html>
