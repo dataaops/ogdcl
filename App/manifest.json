@@ -1,0 +1,25 @@
+{
+  "version": 1,
+  "locale": "en_US",
+  "platform": "4.4.2",
+  "metadata": {
+    "appmode": "static",
+    "primary_rmd": null,
+    "primary_html": "index.html",
+    "content_category": null,
+    "has_parameters": false
+  },
+  "packages": null,
+  "files": {
+    "App/app.r": {
+      "checksum": "ae4e291142132981a4b0c7b492c149cd"
+    },
+    "Attendance.html": {
+      "checksum": "570d524f7aac716b31d1657d30f2bc38"
+    },
+    "index.html": {
+      "checksum": "9c8e5e075dc6b89fec12ece5f5cc0028"
+    }
+  },
+  "users": null
+}
