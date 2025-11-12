@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Power BI Pre-Workshop Form</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #f5f7fa;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+      padding: 20px;
+    }
+
+    form {
+      background: white;
+      padding: 30px 40px;
+      border-radius: 10px;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+      width: 100%;
+      max-width: 450px;
+    }
+
+    h2 {
+      text-align: center;
+      margin-bottom: 20px;
+      color: #333;
+    }
+
+    label {
+      font-weight: bold;
+      display: block;
+      margin-top: 15px;
+      color: #333;
+    }
+
+    input, select, textarea, button {
+      width: 100%;
+      padding: 10px 12px;
+      margin-top: 5px;
+      border-radius: 5px;
+      border: 1px solid #ccc;
+      font-size: 15px;
+    }
+
+    input:focus, select:focus, textarea:focus {
+      border-color: #007BFF;
+      outline: none;
+    }
+
+    button {
+      background-color: #007BFF;
+      color: white;
+      font-weight: bold;
+      cursor: pointer;
+      margin-top: 20px;
+      transition: background 0.3s ease;
+    }
+
+    button:hover {
+      background-color: #0056b3;
+    }
+  </style>
+</head>
+<body>
+  <form 
+    method="POST"
+    action="https://script.google.com/macros/s/AKfycbxHrFbsw3WrT0ERNcQb_P6fckHlSUwsRe5_duaOudWaIZwbBcqxv99oe3T1c0ixrE_S/exec"  <!-- Replace this with your actual Apps Script Web App URL -->
+  
+    <h2>Power BI Pre-Workshop Form</h2>
+
+    <!-- Q1: Name -->
+    <label for="Name">Full Name</label>
+    <input name="Name" type="text" placeholder="Enter your full name" required>
+
+    <!-- Q2: Designation -->
+    <label for="Designation">Designation</label>
+    <select name="Designation" required>
+      <option value="">-- Select Designation --</option>
+      <option value="Officer">Officer</option>
+      <option value="Senior Officer">Senior Officer</option>
+      <option value="Assistant Manager">Assistant Manager</option>
+      <option value="Deputy Manager">Deputy Manager</option>
+      <option value="Manager">Manager</option>
+      <option value="Other">Other</option>
+    </select>
+
+    <!-- Q3: Department -->
+    <label for="Department">Department</label>
+    <select name="Department" required>
+      <option value="">-- Select Department --</option>
+      <option value="HR">HR</option>
+      <option value="Operations">Operations</option>
+      <option value="Finance">Finance</option>
+      <option value="PSM">PSM</option>
+      <option value="Pharmacy">Pharmacy</option>
+      <option value="Other">Other</option>
+    </select>
+
+    <!-- Q4: Familiarity -->
+    <label for="Familiarity">How familiar are you with Power BI?</label>
+    <select name="Familiarity" required>
+      <option value="">-- Select an option --</option>
+      <option value="Never used it — total beginner 🙈">Never used it — total beginner 🙈</option>
+      <option value="Seen dashboards but never built one">Seen dashboards but never built one</option>
+      <option value="Tried it once or twice">Tried it once or twice</option>
+      <option value="Can build basic visuals confidently">Can build basic visuals confidently</option>
+      <option value="Use it regularly for reporting 📊">Use it regularly for reporting 📊</option>
+    </select>
+
+    <!-- Q5: Reason for joining -->
+    <label for="Reason">Why do you want to learn Power BI?</label>
+    <select name="Reason" required>
+      <option value="">-- Select an option --</option>
+      <option value="My boss told me to 😅">My boss told me to 😅</option>
+      <option value="I want to make my reports look cooler">I want to make my reports look cooler</option>
+      <option value="I'm tired of Excel formulas 🧮">I'm tired of Excel formulas 🧮</option>
+      <option value="I want to automate dashboards and save time">I want to automate dashboards and save time</option>
+      <option value="I'm curious about data visualization">I'm curious about data visualization</option>
+      <option value="Other">Other</option>
+    </select>
+
+    <!-- Q6: Expectations -->
+    <label for="Expectation">What do you hope to learn from this session?</label>
+    <textarea name="Expectation" rows="3" placeholder="Write your answer here..." required></textarea>
+
+    <!-- Q10: Excitement Level -->
+    <label for="Excitement">How excited are you for this session? (1–5)</label>
+    <select name="Excitement" required>
+      <option value="">-- Select your level --</option>
+      <option value="Just here to kill time 😐">Just here to kill time 😐</option>
+      <option value="Curious to see what the hype is about 👀">Curious to see what the hype is about 👀</option>
+      <option value="My boss told me to join 😅">My boss told me to join 😅</option>
+      <option value="Super excited 🤩">Super excited 🤩</option>
+    </select>
+
+    <button type="submit">Submit</button>
+  </form>
+</body>
+</html>
